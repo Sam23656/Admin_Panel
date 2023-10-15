@@ -1,0 +1,20 @@
+{% extends "Panel/base.html" %}
+
+{% block title %} Index {% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column flex-wrap">
+    <div class="d-flex flex-row flex-wrap bg-dark text-white mb-3">
+        {% for employee in employees %}
+        <div class="ms-2 border border-primary rounded-3" >
+            <p class=" bg-secondary p-2 m-2 "> Имя: {{ employee.name }} </p>
+            <p class=" bg-secondary p-2 m-2 "> Фамилия: {{ employee.surename }} </p>
+            <p class=" bg-secondary p-2 m-2 "> Отчество:  {{ employee.last_name }} </p>
+            <p class=" bg-secondary p-2 m-2 "> Статус: {{ employee.is_available }} </p>
+            <p class=" bg-secondary p-2 m-2 "> Номер телефона: {{ employee.contact_number }} </p>
+            <br><br>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

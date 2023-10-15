@@ -1,0 +1,20 @@
+{% extends "Panel/base.html" %}
+
+{% block title %} Index {% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column flex-wrap">
+    <div class="d-flex flex-wrap">
+        <div class="d-flex flex-row ms-2  bg-dark text-white mb-3" >
+            <p class="border border-primary bg-secondary rounded-3 p-2 m-2 ">Количество бутылей на складе : {{ bootle_count }} </p>
+            <p class="border border-primary bg-secondary rounded-3 p-2 m-2 "> Заказы не доставленные : {{ orders_not_delivered }}</p>
+            <p class="border border-primary bg-secondary rounded-3 p-2 m-2 "> Заказы выполненные : {{ orders_delivered }}</p>
+            <p class="border border-primary bg-secondary rounded-3 p-2 m-2 "> Колличество клиентов : {{ clients }}</p>
+            <p class="border border-primary bg-secondary rounded-3 p-2 m-2 "> Выручка за день : {{ revenue_day }}</p>
+            <p class="border border-primary bg-secondary rounded-3 p-2 m-2 "> Выручка за неделю : {{ revenue_week }}</p>
+            <p class="border border-primary bg-secondary rounded-3 p-2 m-2 "> Выручка за месяц : {{ revenue_month }}</p>
+            <br><br>
+        </div>
+    </div>
+</div>
+{% endblock %}

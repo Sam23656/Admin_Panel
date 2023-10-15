@@ -1,0 +1,22 @@
+{% extends "Panel/base.html" %}
+
+{% block title %} Index {% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column flex-wrap">
+    <div class="d-flex flex-row flex-wrap bg-dark text-white mb-3">
+        {% for order in orders %}
+        <div class="ms-2 border border-primary rounded-3" >
+            <p class=" bg-secondary p-2 m-2 "> Клиент: {{ order.client.name }} </p>
+            <p class=" bg-secondary p-2 m-2 "> Продукты:  {% for product in order.items.all %}
+            {{ product.name }}
+            {% if not forloop.last %}, {% endif %}
+            {% endfor %} </p>
+            <p class=" bg-secondary p-2 m-2 "> Дата: {{ order.order_date }} </p>
+            <p class=" bg-secondary p-2 m-2 "> Статус: {{ order.order_status }} </p>
+            <br><br>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
